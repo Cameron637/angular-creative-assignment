@@ -1,0 +1,15 @@
+<div>
+  <h1>Most Popular Movies</h1>
+  <ul class="movies">
+    <li *ngFor="let movie of movies" [class.selected]="movie === selectedMovie" (click)="onSelect(movie)">
+      <span class="badge">{{movie.vote_count}}</span>
+      <span>{{movie.title}}</span>
+    </li>
+  </ul>
+  <div *ngIf="selectedMovie">
+    <h2>
+      {{selectedMovie.title | uppercase}} is my favorite movie
+    </h2>
+    <img ng-src="moviePoster">
+  </div>
+</div>
